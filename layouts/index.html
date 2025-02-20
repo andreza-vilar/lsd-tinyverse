@@ -11,18 +11,30 @@
                         {{ .Site.Params.Moto }}
                     </h2>
                     <p class="max-w-xl mx-auto mb-6 font-normal text-gray-900 lg:mx-0 xl:mb-2 md:text-lg xl:text-xl dark:text-gray-50">
-                        {{ .Site.Params.Description}}
+                        {{ .Site.Params.Description }}
                     </p>
                 </div>
-                <div class="col-span-6">
-                    {{ $hero := resources.GetMatch "images/pages/tailbliss-rocket-indigo.png" }}
+                <div class="col-span-6 grid grid-cols-2 gap-4">
+                    {{ $hero1 := resources.GetMatch "images/pages/lsd-logo-dark.png" }}
+                    {{ $hero2 := resources.GetMatch "images/pages/vtex-lab.png" }}
 
-                    {{ $thumb := ($hero.Fill "400x400 webp q90") }}
-                    {{ $large := ($hero.Fill "576x576 webp q90") }}
+                    {{ $thumb1 := ($hero1.Fill "400x400 webp q90") }}
+                    {{ $large1 := ($hero1.Fill "576x576 webp q90") }}
+                    
+                    {{ $thumb2 := ($hero2.Fill "400x400 webp q90") }}
+                    {{ $large2 := ($hero2.Fill "576x576 webp q90") }}
 
                     <img srcset="
-                        {{- with $thumb.RelPermalink -}}{{.}} 400w{{- end -}}
-                        {{- with $large.RelPermalink -}}, {{.}} 576w{{- end -}}" src="{{ $hero.RelPermalink }}" width="100%" height="" alt="TailBliss Hero" class="w-full max-w-xl mx-auto rounded-lg" />
+                        {{- with $thumb1.RelPermalink -}}{{.}} 400w{{- end -}}
+                        {{- with $large1.RelPermalink -}}, {{.}} 576w{{- end -}}" 
+                        src="{{ $hero1.RelPermalink }}" width="100%" alt="Imagem 1" 
+                        class="w-full rounded-lg" />
+
+                    <img srcset="
+                        {{- with $thumb2.RelPermalink -}}{{.}} 400w{{- end -}}
+                        {{- with $large2.RelPermalink -}}, {{.}} 576w{{- end -}}" 
+                        src="{{ $hero2.RelPermalink }}" width="100%" alt="Imagem 2" 
+                        class="w-full rounded-lg" />
                 </div>
             </div>
         </div>
