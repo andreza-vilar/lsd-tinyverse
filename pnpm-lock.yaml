@@ -21,7 +21,7 @@ importers:
         specifier: ^9.0.1
         version: 9.0.1
       postcss:
-        specifier: ^8.5.2
+        specifier: ^8.5.3
         version: 8.5.3
       postcss-cli:
         specifier: ^11.0.0
